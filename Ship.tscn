@@ -13,4 +13,4 @@ polygon = PackedVector2Array(0, -51, -32, 26, 0, -1, 33, 24)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
-polygon = PackedVector2Array(-30, 23, -4.54598e-06, -52, 33, 24, 0, 2)
+polygon = PackedVector2Array(-31.9998, 26.0002, -0.000369239, -51, 33, 24, -7.23998e-06, -1)
