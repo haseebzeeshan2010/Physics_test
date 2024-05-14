@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://hsbom88xjqfu"]
+
+[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_mwr16"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+rotation = 1.5708
+script = ExtResource("1_mwr16")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+rotation = 1.5708
+color = Color(0, 1, 1, 1)
+polygon = PackedVector2Array(0, -51, -32, 26, 0, -1, 33, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-30, 23, -4.54598e-06, -52, 33, 24, 0, 2)
