@@ -1,8 +1,8 @@
 extends RigidBody2D
-var impulse_strength = 20
+var impulse_strength = 38
 
 func _physics_process(delta):
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
 	
 	var angle = rotation
 	
@@ -14,14 +14,18 @@ func _physics_process(delta):
 		
 	
 	#STARBLAST LIKE ROTATION
-	#var m = get_global_mouse_position()
-	#var aim_speed = deg_to_rad(5)
-	#if get_angle_to(m) < 0.08 and get_angle_to(m) > -0.3:
-		#rotation = rotation
-	#else:
-		#if get_angle_to(m) > 0:
-			#rotation += aim_speed
-		#else:
-			#rotation -= aim_speed
-	
+	var m = get_global_mouse_position()
+	var aim_speed = deg_to_rad(1)
+	if get_angle_to(m) < 0.025 and get_angle_to(m) > -0.25:
+		constant_torque = 0
+		#constant_torque = -constant_torque
+	else:
+		if get_angle_to(m) > 0:
+			constant_torque = 60000
+			#rotation = lerp(rotation,rotation+aim_speed,delta*300)
+			#angular_velocity = 10
+		else:
+			constant_torque = -60000
+			#rotation = lerp(rotation,rotation-aim_speed,delta*300)
+			#angular_velocity = -10
 

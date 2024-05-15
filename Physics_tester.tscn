@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfetndnnsubub"]
+[gd_scene load_steps=5 format=3 uid="uid://dfetndnnsubub"]
 
 [ext_resource type="PackedScene" uid="uid://hsbom88xjqfu" path="res://Ship.tscn" id="1_h7u66"]
 [ext_resource type="PackedScene" uid="uid://8vpji2pg41yx" path="res://Obstacle.tscn" id="1_ne3yk"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_v0rtv"]
+[ext_resource type="Texture2D" uid="uid://dcdn51k8s4xv4" path="res://397700-PCRXIP-355.jpg" id="4_vrwll"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_h7u66")]
 position = Vector2(547, 351)
 gravity_scale = 0.0
-linear_damp = 1.0
+linear_damp = 1.4
+angular_damp = 8.061
 
 [node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
 top_level = true
@@ -33,3 +35,9 @@ offset_bottom = 479.0
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_ne3yk")]
 position = Vector2(521, 131)
+
+[node name="397700-pcrxip-355" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(659, 72)
+scale = Vector2(10, 10)
+texture = ExtResource("4_vrwll")
