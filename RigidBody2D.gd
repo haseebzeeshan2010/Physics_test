@@ -16,7 +16,7 @@ func _physics_process(delta):
 	#STARBLAST LIKE ROTATION
 	var m = get_global_mouse_position()
 	var aim_speed = deg_to_rad(1)
-	if get_angle_to(m) < 0.025 and get_angle_to(m) > -0.25:
+	if get_angle_to(m) < 0.02 and get_angle_to(m) > -0.2:
 		constant_torque = 0
 		#constant_torque = -constant_torque
 	else:

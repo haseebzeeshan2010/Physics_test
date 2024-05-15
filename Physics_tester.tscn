@@ -11,7 +11,7 @@
 position = Vector2(547, 351)
 gravity_scale = 0.0
 linear_damp = 1.4
-angular_damp = 8.061
+angular_damp = 11.162
 
 [node name="Camera2D" type="Camera2D" parent="RigidBody2D"]
 top_level = true
