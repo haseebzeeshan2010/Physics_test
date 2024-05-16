@@ -33,11 +33,11 @@ offset_top = 138.0
 offset_right = 758.0
 offset_bottom = 479.0
 
+[node name="397700-pcrxip-355" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-77.9999, 599)
+scale = Vector2(7, 7)
+texture = ExtResource("4_vrwll")
+
 [node name="StaticBody2D" parent="." instance=ExtResource("1_ne3yk")]
 position = Vector2(521, 131)
-
-[node name="397700-pcrxip-355" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(659, 72)
-scale = Vector2(10, 10)
-texture = ExtResource("4_vrwll")

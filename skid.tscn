@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btyble232142r"]
+
+[ext_resource type="Script" path="res://skid.gd" id="1_5f8fd"]
+
+[node name="Trail" type="Line2D"]
+script = ExtResource("1_5f8fd")

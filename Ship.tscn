@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://hsbom88xjqfu"]
+[gd_scene load_steps=4 format=3 uid="uid://hsbom88xjqfu"]
 
 [ext_resource type="Script" path="res://RigidBody2D.gd" id="1_mwr16"]
+[ext_resource type="Texture2D" uid="uid://dp53v0yx56onk" path="res://1349585_176178-OWBEUW-403.svg" id="2_nwqcq"]
+
+[sub_resource type="Gradient" id="Gradient_3tlvh"]
+colors = PackedColorArray(0, 1, 1, 0, 0.203738, 0.614851, 0.999996, 1)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 rotation = 1.5708
@@ -14,3 +18,19 @@ polygon = PackedVector2Array(0, -51, -32, 26, 0, -1, 33, 24)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
 polygon = PackedVector2Array(-31.9998, 26.0002, -0.000369239, -51, 33, 24, -7.23998e-06, -1)
+
+[node name="1349585176178-owbeuw-403" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-39, 0.00014118)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_nwqcq")
+
+[node name="Skid_mark" type="Line2D" parent="."]
+unique_name_in_owner = true
+top_level = true
+z_index = -1
+gradient = SubResource("Gradient_3tlvh")
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
