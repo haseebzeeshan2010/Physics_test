@@ -1,10 +1,17 @@
-[gd_scene format=3 uid="uid://8vpji2pg41yx"]
+[gd_scene load_steps=3 format=3 uid="uid://8vpji2pg41yx"]
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[ext_resource type="Texture2D" uid="uid://bbbt2w65xxxyg" path="res://tire.svg" id="1_hl2ep"]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(1, 1, 0.615686, 1)
-polygon = PackedVector2Array(-1, -107, -94, 0, 0, 95, 99, 4)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3eeto"]
+radius = 37.3363
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(1, 96, 102, 4, -1, -109, -95, -2)
+[node name="StaticBody2D" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 11.0
+
+[node name="Tire2" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_hl2ep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3eeto")

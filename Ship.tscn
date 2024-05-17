@@ -1,36 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://hsbom88xjqfu"]
+[gd_scene load_steps=6 format=3 uid="uid://hsbom88xjqfu"]
 
 [ext_resource type="Script" path="res://RigidBody2D.gd" id="1_mwr16"]
-[ext_resource type="Texture2D" uid="uid://dp53v0yx56onk" path="res://1349585_176178-OWBEUW-403.svg" id="2_nwqcq"]
+[ext_resource type="Texture2D" uid="uid://c84c5qbxl4ass" path="res://1358016_179649-OWO785-216 (1).svg" id="3_rvfrf"]
 
 [sub_resource type="Gradient" id="Gradient_3tlvh"]
-colors = PackedColorArray(0, 1, 1, 0, 0.203738, 0.614851, 0.999996, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8brti"]
+blend_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jsdj0"]
+polygon = PackedVector2Array(99, -0.000358379, 99, -4.00036, 99, -7.00036, 98, -10.0004, 97, -13.0004, 94.9999, -17.0003, 93.9999, -19.0003, 90.9999, -23.0003, 86.9999, -25.0003, 82.9999, -26.0003, 77.9999, -27.0003, 70.9999, -27.0003, 63.9999, -27.0002, 59.9999, -26.0002, 55.9999, -26.0002, 53.9999, -28.0002, 50.9999, -28.0002, 50.9999, -27.0002, 51.9999, -26.0002, 44.9999, -26.0002, 30.9999, -26.0001, 17.9999, -26.0001, 0.999899, -28, -9.0001, -28, -11.0001, -27, -14.0001, -24.9999, -18.0001, -21.9999, -19.0001, -19.9999, -21.0001, -16.9999, -23, -12.9999, -24, -7.99991, -25, -3.99991, -25, 4.00009, -24, 9.00009, -23, 12.0001, -21.9999, 14.0001, -19.9999, 18.0001, -18.9999, 20.0001, -16.9999, 23.0001, -13.9999, 25.0001, -10.9999, 27, -8.9999, 28, 3.0001, 28, 18.0001, 25.9999, 30.0001, 25.9999, 51.0001, 25.9998, 51.0001, 26.9998, 51.0001, 27.9998, 53.0001, 27.9998, 56.0001, 25.9998, 59.0001, 25.9998, 61.0001, 26.9998, 73.0001, 26.9997, 84.0001, 25.9997, 89.0001, 23.9997, 92.0001, 20.9997, 96.0001, 15.9997, 98, 10.9996, 99, 4.99964)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 rotation = 1.5708
 script = ExtResource("1_mwr16")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 rotation = 1.5708
 color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(0, -51, -32, 26, 0, -1, 33, 24)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
-polygon = PackedVector2Array(-31.9998, 26.0002, -0.000369239, -51, 33, 24, -7.23998e-06, -1)
+polygon = PackedVector2Array(0.000181, 25, 9.00017, 23.9999, 20.0001, 18.9999, 28.0001, 9.9998, 26.9999, -9.0002, 25.9998, -27.0002, 25.9996, -53.0002, 26.9995, -64.0002, 27.9994, -79.0002, 23.9993, -90.0002, 17.9993, -96.0001, 6.99928, -99.0001, -7.00072, -98.9999, -18.0007, -95.9999, -26.0006, -86.9998, -28.0005, -69.9998, -26.0004, -50.9998, -26.0001, -19.9998, -27.9999, 10.0002, -21.9999, 18.0002, -9.99983, 24.0001)
 
-[node name="1349585176178-owbeuw-403" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-39, 0.00014118)
+[node name="1358016179649-owo785-216(1)" type="Sprite2D" parent="."]
+position = Vector2(37, -0.00013394)
 rotation = 1.5708
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_nwqcq")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_rvfrf")
 
-[node name="Skid_mark" type="Line2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Skid_mark" type="Line2D" parent="Node2D"]
 unique_name_in_owner = true
 top_level = true
 z_index = -1
+position = Vector2(20, 0)
+points = PackedVector2Array(-20.0001, -17)
 gradient = SubResource("Gradient_3tlvh")
 begin_cap_mode = 2
 end_cap_mode = 2
 antialiased = true
+
+[node name="Skid_mark2" type="Line2D" parent="Node2D"]
+unique_name_in_owner = true
+top_level = true
+z_index = -1
+position = Vector2(-20, 0)
+gradient = SubResource("Gradient_3tlvh")
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_8brti")
+scale = Vector2(1.01, 1.01)
+occluder = SubResource("OccluderPolygon2D_jsdj0")
