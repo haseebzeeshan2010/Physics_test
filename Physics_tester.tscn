@@ -1,15 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfetndnnsubub"]
 
 [ext_resource type="PackedScene" uid="uid://hsbom88xjqfu" path="res://Ship.tscn" id="1_h7u66"]
-[ext_resource type="PackedScene" uid="uid://8vpji2pg41yx" path="res://Obstacle.tscn" id="1_ne3yk"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_v0rtv"]
-[ext_resource type="Texture2D" uid="uid://dcdn51k8s4xv4" path="res://397700-PCRXIP-355.jpg" id="4_vrwll"]
+[ext_resource type="Script" path="res://enemy_car.gd" id="4_b0lt8"]
 [ext_resource type="Texture2D" uid="uid://eevcnmcnj0p1" path="res://custom_road/road parts.png" id="5_fnm8g"]
+
+[sub_resource type="Curve2D" id="Curve2D_sk80j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1235, -158, 0, 0, 0, 0, 1979, -150, 0, 0, 0, 0, 3687, -146, 0, 0, 0, 0, 3915, -42, 0, 0, 0, 0, 4123, 122, 0, 0, 0, 0, 4179, 438, 0, 0, 0, 0, 4167, 754, 0, 0, 0, 0, 4203, 1026, 0, 0, 0, 0, 4307, 1238, 0, 0, 0, 0, 4543, 1342, 0, 0, 0, 0, 4811, 1354, 0, 0, 0, 0, 5055, 1210, 0, 0, 0, 0, 5147, 942, 0, 0, 0, 0, 5139, -1454, 0, 0, 0, 0, 5307, -1902, 0, 0, 0, 0, 5519, -2010, 0, 0, 0, 0, 5739, -2086, 0, 0, 0, 0, 5987, -2118, 0, 0, 0, 0, 6203, -2070, 0, 0, 0, 0, 6415, -1926, 0, 0, 0, 0, 6595, -1782, 0, 0, 0, 0, 6695, -1562, 0, 0, 0, 0, 6711, -1218, 0, 0, 0, 0, 6715, -898, 0, 0, 0, 0, 6727, -594, 0, 0, 0, 0, 6779, -346, 0, 0, 0, 0, 6931, -118, 0, 0, 0, 0, 7243, 110, 0, 0, 0, 0, 7483, 398, 0, 0, 0, 0, 7531, 1866, 0, 0, 0, 0, 7403, 2162, 0, 0, 0, 0, 7167, 2454, 0, 0, 0, 0, 6803, 2706, 0, 0, 0, 0, 6375, 2806, 0, 0, 0, 0, 5179, 2810, 0, 0, 0, 0, 4883, 2834, 0, 0, 0, 0, 4719, 3002, 0, 0, 0, 0, 4695, 3366, 0, 0, 0, 0, 4699, 5598, 0, 0, 0, 0, 4595, 5926, 0, 0, 0, 0, 4303, 6126, 0, 0, 0, 0, 3191, 6138, 0, 0, 0, 0, 2822, 6296, 0, 0, 0, 0, 2720, 6521, 0, 0, 0, 0, 2767, 6728, 0, 0, 0, 0, 2894, 6872, 0, 0, 0, 0, 3157, 6949, 0, 0, 0, 0, 3776, 6987, 0, 0, 0, 0, 6081, 6991)
+}
+point_count = 49
 
 [node name="Node2D" type="Node2D"]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_h7u66")]
-position = Vector2(547, 351)
+position = Vector2(-36.9999, 166)
 rotation = -0.127409
 gravity_scale = 0.0
 linear_damp = 1.4
@@ -27,7 +32,6 @@ script = ExtResource("3_v0rtv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 visible = false

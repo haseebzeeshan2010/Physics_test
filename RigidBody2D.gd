@@ -5,20 +5,27 @@ var new_skid = 0
 var remove_skid = false
 func _physics_process(delta):
 	#look_at(get_global_mouse_position())
+	
 	#SKID CODE
 	var speed = linear_velocity.length()
-	if speed > 600 and speed < 1100:
+	if speed > 600 and speed < 1000 and (angular_velocity > 0.05 or angular_velocity < -0.05):
 		#print("DRAG")
 		#print(speed)
 		if new_skid == 0:
 			remove_skid = false
-			skid()
+			%Trail.skid()
+			%Trail2.skid()
+
 	else:
 		remove_skid = true
-		new_skid = %Skid_mark.get_point_count()
+		new_skid = %Trail.get_point_count()
+		
 	if remove_skid == true:
-		%Skid_mark.remove_point(0)
-		%Skid_mark2.remove_point(0)
+		%Trail.remove_point(0)
+		%Trail2.remove_point(0)
+		%Trail.top_level = true
+		%Trail2.top_level = true
+		#%Skid_mark2.remove_point(0)
 
 	
 	#TURNING CODE
@@ -49,13 +56,14 @@ func _physics_process(delta):
 	
 	
 
-func skid():
-	%Skid_mark.add_point(global_position)
-	%Skid_mark2.add_point(global_position)
-	while %Skid_mark.get_point_count() > 50:
-		%Skid_mark.remove_point(0)
-		%Skid_mark2.remove_point(0)
-		
-	drag_change = %Skid_mark.get_point_count()
+#func skid():
+	#drag_change += 1
+	##%Skid_mark.add_point(%Skid_mark.global_position)
+	##%Skid_mark2.add_point(global_position)
+	##while %Skid_mark.get_point_count() > 50:
+		##%Skid_mark.remove_point(0)
+		##%Skid_mark2.remove_point(0)
+		##
+	##drag_change = %Skid_mark.get_point_count()
 
 

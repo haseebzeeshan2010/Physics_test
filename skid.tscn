@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://skid.gd" id="1_5f8fd"]
 
 [node name="Trail" type="Line2D"]
+show_behind_parent = true
 script = ExtResource("1_5f8fd")
